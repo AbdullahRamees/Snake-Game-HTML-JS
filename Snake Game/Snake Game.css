@@ -59,7 +59,7 @@ canvas:focus{
 
  /* Menu Screen Style */
  #menu{
-    display: block;
+    display: none;
     width: 340px;
     padding-top: 50px;
     padding-bottom: 20px;
@@ -124,3 +124,21 @@ canvas:focus{
     color: #000;
 }
 
+ /* Game Over Screen Style */
+            
+ #gameover{
+    display: block;
+    width: 340px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-size: 30px;
+    color: rgb(255, 255, 255);
+}
+
+#gameover p{
+    margin-top: 25px;
+    font-size: 20px;
+}
