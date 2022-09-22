@@ -9,8 +9,10 @@
         <header class="wrap">
             <h1>Snake vs Frogs</h1>
             <p class="score">Score: <span id="score_value">0</span></p>
+            <p class="cooldown">cooldown: <span id="Counter">0</span>/<span id="cooldowntimer">0</span></p>
         </header>
         <canvas class="wrap" id="snake" width="320" height="320" tabindex="1"></canvas>
+        
 
          <!-- Main Menu Screen -->
          <div id="menu">
@@ -20,6 +22,8 @@
          </br>
             <a id="newgame_menu">New Game</a>
             <a id="setting_menu">Settings</a>
+            <br>
+         <p>It's Ordinary Snake game with little bit chellenge. concept is lie this snake need to eat Frogs but the smart frogs will change there location after some time</p>
         </div>
 
         <!-- Setting screen -->
@@ -47,11 +51,13 @@
          <!-- Game Over Screen -->
          <div id="gameover">
             <h2 style="color:red">Game Over</h2>
-            <p>Your Score : <span id="score_value">0</span></p>
+            <p>Your Score : <span id="score_value_2">0</span></p>
             <p>press <span style="background-color:rgb(43, 255, 0); color: #000000">space</span> to Restart</p>
             <br>
             <a id="newgame_gameover">New Game</a>
             <a id="setting_gameover">settings</a>
         </div>
+
+        <script type="text/javascript" src="Snake Game.js"></script>
     </body>
 </html>

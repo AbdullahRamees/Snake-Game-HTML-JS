@@ -1,5 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=VT323");
 
+::selection {color:#ca3030; background:transparent;}
+::-moz-selection {color:#88cc1c; background:transparent;}
+
  *{
     margin: 0;
     padding: 0;
@@ -31,6 +34,14 @@ h1{
     text-align: right;
 }
 
+.cooldown{
+    display: inline-block;
+    width: 350px;
+    font-size: 20px;
+    color: #ff0000;
+    text-align: center;
+}
+
 .score_value{
     font-size: inherit;
 }
@@ -50,7 +61,7 @@ canvas{
     background-color: rgb(255, 255, 255);
     border-style: solid;
     border-width: 10px;
-    border-color: #585656;
+    border-color: #474747;
 }
 
 canvas:focus{
@@ -59,7 +70,7 @@ canvas:focus{
 
  /* Menu Screen Style */
  #menu{
-    display: none;
+    display: block;
     width: 340px;
     padding-top: 50px;
     padding-bottom: 20px;
@@ -127,7 +138,7 @@ canvas:focus{
  /* Game Over Screen Style */
             
  #gameover{
-    display: block;
+    display: none;
     width: 340px;
     padding-top: 50px;
     padding-bottom: 50px;
@@ -141,4 +152,18 @@ canvas:focus{
 #gameover p{
     margin-top: 25px;
     font-size: 20px;
+}
+
+ /* All screens style */
+ #gameover a, #setting a, #menu a{
+    display: block;
+}
+
+#gameover a, #setting a:hover, #menu a:hover{
+    cursor: pointer;
+}
+
+#gameover a:hover::before, #setting a:hover::before, #menu a:hover::before{
+    content: "||";
+    margin-right: 10px;
 }
