@@ -68,8 +68,8 @@ canvas:focus{
     outline: none;
 }
 
- /* Menu Screen Style */
- #menu{
+/* Menu Screen Style */
+#menu{
     display: block;
     width: 340px;
     padding-top: 50px;
@@ -89,6 +89,11 @@ canvas:focus{
 
 #menu a{
     font-size: 25px;
+}
+
+#menu p{
+    font-size: 18px;
+    color: crimson;
 }
 
 @-webkit-keyframes logo-ani{

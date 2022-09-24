@@ -35,6 +35,7 @@
     var Header_score;
     var endgame_score;
 
+    //count down 
     var Counter_value;
     var cooldown_value;
 
@@ -80,8 +81,6 @@
     var addFrog = function(){
         frog.x = Math.floor(Math.random() * ((canvas.width / 10) - 1));
         frog.y = Math.floor(Math.random() * ((canvas.height / 10) - 1));
-
-        //fixed snake and frog overlapping
         for(var i = 0; i < snake.length; i++){
             if(checkBlock(frog.x, frog.y, snake[i].x, snake[i].y)){
                 addFrog();
@@ -89,17 +88,20 @@
         }
     }
 
-
     var checkBlock = function(x, y, _x, _y){
         return (x == _x && y == _y) ? true : false;
     }
 
-
+    //showing score
+    /* ###################################################*/
     var altScore = function(score_val){
         Header_score.innerHTML = String(score_val);
         endgame_score.innerHTML = String(score_val);
     }
 
+
+    //Main Game loop
+    /* ###################################################*/
     var mainLoop = function(){
         
         var _x = snake[0].x;
@@ -113,7 +115,6 @@
             case 2: _y++; break;
             case 3: _x--; break;
         }
-
         snake.pop();
         snake.unshift({x: _x, y: _y});
 
@@ -173,8 +174,6 @@
             Counter_value.innerHTML = String(counter);
         }
         
-        // --------------------
-
             context.beginPath();
             context.fillStyle = "#ffffff";
             context.fillRect(0, 0, canvas.width, canvas.height);
@@ -189,6 +188,8 @@
             setTimeout(mainLoop, snake_speed);
     }
 
+    // New Game function
+    /* ###################################################*/
     var newGame = function(){
 
         showScreen(0);
@@ -211,13 +212,17 @@
     }
 
    
-
+    //wall on off show
+    /* ###################################################*/
     var setWall = function(wall_value){
         wall = wall_value;
         if(wall == 0){screen_game.style.borderColor = "#000000";}
         if(wall == 1){screen_game.style.borderColor = "#474747";}
     }
 
+ 
+    //set snake speed and cooldown time
+    /* ###################################################*/
     var setSnakeSpeed = function(speed_value){
         snake_speed = speed_value;
          if(speed_value == 120){
@@ -234,7 +239,8 @@
          cooldown_value.innerHTML = String(cooldownTime);
     }
 
-    
+    //screen changer
+    /* ###################################################*/
     var showScreen = function(screen_options){
         switch(screen_options){
             case 0 : screen_game.style.display = "block";
@@ -263,6 +269,8 @@
         }
     }
 
+    //onload function
+    /* ###################################################*/
     window.onload = function(){
         canvas = document.getElementById("snake");
         context = canvas.getContext("2d");
